@@ -523,7 +523,7 @@ static final String sFileName = "AdminBooks.jsp";
       sSort = "";
     }
     if ( iSort == 0 ) {
-      sForm_Sorting = "";
+      sForm_Sorting = "123";
     }
     else {
       if ( sSort.equals(sSorted)) { 
