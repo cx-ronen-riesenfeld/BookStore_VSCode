@@ -547,7 +547,7 @@ static final String sFileName = "AdminBooks.jsp";
     }
   
 
-  // Build full SQL statement
+  // Build full SQL statement1
   
   sSQL = "select i.author as i_author, " +
     "i.category_id as i_category_id, " +
