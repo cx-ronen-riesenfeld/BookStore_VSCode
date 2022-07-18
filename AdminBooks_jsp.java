@@ -515,7 +515,7 @@ static final String sFileName = "AdminBooks.jsp";
     String sSorted = getParam( request, "FormItems_Sorted");
     String sDirection = "";
     String sForm_Sorting = "";
-    int iSort = 0;
+    int iSort = 0;   11
     try {
       iSort = Integer.parseInt(sSort);
     }
