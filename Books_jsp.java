@@ -23,7 +23,7 @@ public class Books_jsp extends HttpJspBase {
   static final int ad_Search_ = 5;
   static final String appPath   ="/";
 
-//Database connection string
+//Database connection string 
 
   static final String DBDriver  ="";
   static final String strConn   ="";
