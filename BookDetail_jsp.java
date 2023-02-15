@@ -135,7 +135,7 @@ public class BookDetail_jsp extends HttpJspBase {
       }
     }
     catch (java.sql.SQLException sqle) {}
-    return "";
+    return "";   
   }
 
   String getValue(java.sql.ResultSet rs, String strFieldName) {
