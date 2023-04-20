@@ -152,7 +152,9 @@ public class BookDetail_jsp extends HttpJspBase {
   
   String getParam(javax.servlet.http.HttpServletRequest req, String paramName) {
     String param = req.getParameter(paramName);
-    param = HtmlEscapers.htmlEscaper().escape(param);        
+    //param = HtmlEscapers.htmlEscaper().escape(param);        
+    Encoder esapiEncoder = new DefaultEncoder();
+    param = esapiEncoder.encodeForSQL(new OracleCodec(), param);     
     if ( param == null || param.equals("") ) return "";
     return param;
   }
