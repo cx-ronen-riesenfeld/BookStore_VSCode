@@ -152,9 +152,8 @@ public class BookDetail_jsp extends HttpJspBase {
   
   String getParam(javax.servlet.http.HttpServletRequest req, String paramName) {
     String param = req.getParameter(paramName);
-    //param = HtmlEscapers.htmlEscaper().escape(param);        
-    Encoder esapiEncoder = new DefaultEncoder();
-    param = esapiEncoder.encodeForSQL(new OracleCodec(), param);     
+    //Encoder esapiEncoder = new DefaultEncoder();
+    //param = esapiEncoder.encodeForSQL(new OracleCodec(), param);     
     if ( param == null || param.equals("") ) return "";
     return param;
   }
@@ -944,7 +943,8 @@ fldproduct_url="Review this book on Amazon.com";
   
       case iupdateAction:
         
-sSQL = "update items set rating=rating+" + getParam(request, "rating") + ", rating_count=rating_count+1 where item_id=" + getParam(request, "item_id");
+//sSQL = "update items set rating=rating+" + getParam(request, "rating") + ", rating_count=rating_count+1 where item_id=" + getParam(request, "item_id");
+sSQL = "update items set rating=rating+?, rating_count=rating_count+1 where item_id=?";
         if ("".equals(sSQL)) {
           sSQL = "update items set " +
                 "rating=" + toSQL(fldrating, adNumber) +
@@ -958,7 +958,14 @@ sSQL = "update items set rating=rating+" + getParam(request, "rating") + ", rati
       if ( sRatingErr.length() > 0 ) return sRatingErr;
       try {
         // Execute SQL statement
-        stat.executeUpdate(sSQL);
+        //stat.executeUpdate(sSQL);
+
+        stat = conn.prepareCallsSQL); 
+
+        stat.setInteger(1, getParam(request, "rating"));         
+        stat.setInteger(2, getParam(request, "item_id"));         
+        stat.execute();
+
       }
       catch(java.sql.SQLException e) {
         sRatingErr = e.toString(); return (sRatingErr);
