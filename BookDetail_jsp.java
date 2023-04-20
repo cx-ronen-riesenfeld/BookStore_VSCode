@@ -943,8 +943,8 @@ fldproduct_url="Review this book on Amazon.com";
   
       case iupdateAction:
         
-//sSQL = "update items set rating=rating+" + getParam(request, "rating") + ", rating_count=rating_count+1 where item_id=" + getParam(request, "item_id");
-sSQL = "update items set rating=rating+?, rating_count=rating_count+1 where item_id=?";
+sSQL = "update items set rating=rating+" + getParam(request, "rating") + ", rating_count=rating_count+1 where item_id=" + getParam(request, "item_id");
+
         if ("".equals(sSQL)) {
           sSQL = "update items set " +
                 "rating=" + toSQL(fldrating, adNumber) +
@@ -958,13 +958,7 @@ sSQL = "update items set rating=rating+?, rating_count=rating_count+1 where item
       if ( sRatingErr.length() > 0 ) return sRatingErr;
       try {
         // Execute SQL statement
-        //stat.executeUpdate(sSQL);
-
-        stat = conn.prepareStatement(sSQL); 
-
-        stat.setInteger(1, getParam(request, "rating"));         
-        stat.setInteger(2, getParam(request, "item_id"));         
-        stat.execute();
+        stat.executeUpdate(sSQL);
 
       }
       catch(java.sql.SQLException e) {
