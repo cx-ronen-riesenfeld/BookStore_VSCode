@@ -960,7 +960,7 @@ sSQL = "update items set rating=rating+?, rating_count=rating_count+1 where item
         // Execute SQL statement
         //stat.executeUpdate(sSQL);
 
-        stat = conn.prepareCallsSQL); 
+        stat = conn.prepareStatement(sSQL); 
 
         stat.setInteger(1, getParam(request, "rating"));         
         stat.setInteger(2, getParam(request, "item_id"));         
