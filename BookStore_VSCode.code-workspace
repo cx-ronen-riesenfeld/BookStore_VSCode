@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"name": "BookStore_VSCode",
+			"path": "."
+		}
+	],
+	"settings": {
+		"cx.server": {
+			"url": "http://127.0.0.1/",
+			"alias": "Checkmarx1",
+			"username": "develop1",
+			"password": "0V5zUMSZeH83MbdgqFsqkxyUgDzQMqqZdX6x",
+			"project_id": 276,
+			"team_id": 2,
+			"project_name": "BookStore_VSCode"
+		},
+		"java.compile.nullAnalysis.mode": "disabled"
+	}
+}
