@@ -3,6 +3,9 @@
 		{
 			"name": "BookStore_VSCode",
 			"path": "."
+		},
+		{
+			"path": "../../BookStore_GitLab"
 		}
 	],
 	"settings": {
