@@ -34,6 +34,7 @@ public class MembersGrid_jsp extends HttpJspBase {
     String sErr = "";
     try {
       java.sql.DriverManager.registerDriver((java.sql.Driver)(Class.forName(DBDriver).newInstance()));
+
     }
     catch (Exception e) {
       sErr = e.toString();

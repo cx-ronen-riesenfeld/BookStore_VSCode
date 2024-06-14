@@ -227,6 +227,7 @@ public class BookDetail_jsp extends HttpJspBase {
         }
         catch (NumberFormatException nfe) {
           param = "null";
+          String password ="111";
         }
         break;
       }
