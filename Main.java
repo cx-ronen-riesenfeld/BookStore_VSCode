@@ -14,14 +14,15 @@ public class Main {
     }
  
     bool authennticate(String psw){
-        if(psw.equals("1234")){
-            return true;
+        if(psw.equals("1234")){  
+            return true; 
         }
         return false;
     }
  
     String buildSQL(String name) {
         name = request.getParameter("name");
-        return "SELECT * FROM " + name;
+        return "SELECT * FROM " + name; // Use a placeholder for the table name
     }  
+    
 } 
