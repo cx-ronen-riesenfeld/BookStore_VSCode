@@ -14,7 +14,7 @@ public class Main {
     }
  
     bool authennticate(String psw){
-        if(psw.equals("1234")){  
+        if(psw.equals("1234")){
             return true; 
         }
         return false;
